@@ -1,0 +1,169 @@
+a {
+  text-decoration: none;
+  color: rgb(67, 67, 67) !important;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(rgba(97, 162, 197, 0.5), rgba(97, 162, 197, 0.5)),
+    url("./assets/images/landing background.png");
+  /* Adjust path */
+  background-size: cover;
+  background-position: center;
+}
+
+/* #879FA4 */
+
+.hero-sub-section {
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar-custom {
+  background-color: #f8f9fa;
+  /* Light background for navbar */
+}
+
+.navbar-custom .nav-link {
+  color: #000;
+  /* Black text for links */
+}
+
+.navbar-custom .btn-primary {
+  background-color: #007bff;
+  /* Primary button color */
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.text-hover-gray:hover {
+  color: rgb(154, 152, 152) !important;
+}
+
+.bg-hover-gray {
+  transition: box-shadow 0.3s ease;
+}
+
+/* Add the shadow when hovering over the element */
+.bg-hover-gray:hover {
+  box-shadow: 0 4px 8px rgba(255, 254, 254, 0.8);
+}
+
+.glow {
+  animation: blink 4s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale(2);
+  }
+
+  51% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Minimal custom CSS required */
+.rotate-container {
+  perspective: 1000px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.rotate-container .card {
+  transition: transform 0.8s cubic-bezier(0.34, 1.45, 0.7, 1);
+  transform-style: preserve-3d;
+  position: relative;
+  min-height: 500px;
+  /* Match front height */
+}
+
+.rotate-container .front,
+.rotate-container .back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(195deg, #ec407a, #d81b60) !important;
+}
+
+.rotate-container .back {
+  transform: rotateY(180deg);
+}
+
+.rotate-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+/* Firefox fix */
+@media screen and (-moz-images-in-canvas: 0) {
+  .rotate-container .front,
+  .rotate-container .back {
+    backface-visibility: visible;
+    transform-style: flat;
+  }
+}
+
+.rotate-container .card .back .card-body,
+.rotate-container .card .front .card-body {
+  justify-content: center;
+  align-content: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+
+#typed::after {
+  content: "|";
+  animation: blink 0.7s infinite step-end;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* .landing-content h1,.landing-content h2,.landing-content p,.landing-content div a{
+            padding: 200px !important;
+        } */
+
+/* .front .card-body h3 ,.front .card-body p{
+    z-index: 100;
+} */
+
+/* logoSmall.png */
+@media (max-width: 768px) {
+  #headerLogo {
+    content: url("../assets/images/logo-mobile.png");
+  }
+}
+
